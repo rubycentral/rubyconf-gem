@@ -5,7 +5,7 @@ require 'json'
 require 'net/http'
 
 class Rubyconf
-  VERSION = '1.0.0'
+  VERSION = '1.1.0'
 
   class WirelessNetwork
     def initialize(data)
