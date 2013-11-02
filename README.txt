@@ -1,6 +1,6 @@
 = rubyconf
 
-* http://github.com/rubycentral/rubyconf
+* http://github.com/rubycentral/rubyconf-gem
 
 == DESCRIPTION:
 
