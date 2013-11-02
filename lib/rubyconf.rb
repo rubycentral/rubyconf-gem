@@ -88,7 +88,7 @@ class Rubyconf
     fin = Time.now
     s.close
 
-    fin - start
+    (fin - start) * 1_000_000
   end
 
   def post!
