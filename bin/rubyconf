@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require 'rubyconf'
+require 'optparse'
+
+rc = Rubyconf.new
+
+interval = 300
+
+opts = OptionParser.new do |o|
+  o.on "--scan", "Display info about all wireless networks around" do
+    rc.refresh_wireless
+    rc.show_networks
+    exit
+  end
+
+  o.on "-i", "--interval INTEGER", "Control how often to post info (default: 300s)" do |s|
+    interval = s.to_i
+  end
+end
+
+puts "Posting details about wireless network ever #{interval} seconds..."
+
+begin
+  loop do
+    rc.post!
+    sleep interval
+  end
+rescue Interrupt
+end
